@@ -1,0 +1,27 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Event {
+  id            String   @id @default(cuid()) @map("_id")
+  title         String
+  description   String
+  eventDate     String
+  attendees     Json // Each attendee will have id, email, eventsAttending, seatsBooked
+  artistes      String[]
+  timeCreated   String
+  lastModified  String
+  eventImage    String?  @default("")
+  genre         String
+  numberOfSeats Int
+  location      String
+  type          String
+  seats         Json // Store seats as an array of objects
+
+  @@map("events")
+}
