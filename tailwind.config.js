@@ -11,10 +11,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
+        background: "#0B0C1E",
         foreground: "var(--foreground)",
-        "background-red": "#0B0C1E",
-        "header-color": "#F8F8FF",
         "pry-bg": "#0B0C1E",
         "sec-bg": "#1A1B3A",
         "card-bg": "#27284A",

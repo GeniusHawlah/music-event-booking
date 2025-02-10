@@ -76,7 +76,7 @@ export default function RootLayout({ children }) {
           <section className={`${lato.className} `}>
             <Navbar />
             <div> {children}</div>
-            {/* <Footer/> */}
+            <Footer/>
           </section>
         </Theme>
       </body>
