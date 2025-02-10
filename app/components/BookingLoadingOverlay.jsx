@@ -14,10 +14,14 @@ function BookingLoadingOverlay() {
     >
       <div className="bg-the-white text-pry-bg rounded-lg flex flex-col items-center gap-y-3 justify-start p-5">
         <p className="text-lg font-semibold text-center ">Please wait...</p>
-        <Icon className="text-pry-bg text-4xl mt-20" icon="eos-icons:bubble-loading" />
-        <p className="text-base font-semibold text-center ">Kindly wait while we charge your credit card &#8358;200K...</p>
+        <Icon
+          className="text-pry-bg text-4xl "
+          icon="eos-icons:bubble-loading"
+        />
+        <p className="text-base font-semibold text-center ">
+          Kindly wait while we charge your credit card &#8358;200K...
+        </p>
       </div>
-   
     </div>
   );
 }

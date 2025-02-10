@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import ToastProvider from "@/wrappers/ToastProvider";
 import { Theme } from "@radix-ui/themes";
 import GeneralLoading from "./components/GeneralLoading";
+import BookingLoadingOverlay from "./components/BookingLoadingOverlay";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -70,6 +71,7 @@ export default function RootLayout({ children }) {
         <Theme>
           {/* <TransparentOverlay /> */}
           <GeneralLoading />
+          <BookingLoadingOverlay />
           <ToastProvider />
           <section className={`${lato.className} `}>
             <Navbar />
