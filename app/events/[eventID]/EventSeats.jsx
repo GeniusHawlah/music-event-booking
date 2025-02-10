@@ -6,7 +6,7 @@ import { Skeleton } from "@radix-ui/themes";
 import React, { useEffect, useState } from "react";
 import BookingModal from "./BookingModal";
 import OneSeat from "./OneSeat";
-import NothingToDisplay from "@app/components/NothingToDisplay";
+import NothingToDisplay from "@/app/components/NothingToDisplay";
 
 function EventSeats({ eventID }) {
   const fetchEventHandlerFrontend = generalStore(
