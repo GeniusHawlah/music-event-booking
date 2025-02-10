@@ -5,9 +5,9 @@ export const BookSeatSchema = z.object({
     .string({ required_error: "First Name is required" })
     .min(3, { message: "First Name must be at least three characters long" }),
 
-  lastName: z
-    .string({ required_error: "Last Name is required" })
-    .min(3, { message: "Last Name must be at least three characters long" }),
+  // lastName: z
+  //   .string({ required_error: "Last Name is required" })
+  //   .min(3, { message: "Last Name must be at least three characters long" }),
 
   email: z
     .string({ required_error: "Email is required" }) // Ensures the field exists

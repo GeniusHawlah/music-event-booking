@@ -39,7 +39,7 @@ function Navbar() {
 
   return (
     <div
-      className={`z-[20]  gen-padding  sticky top-0 bg-sec-bg text-the-white ${
+      className={`z-[20]  gen-padding  sticky top-0 bg-pry-bg text-the-white ${
         scroll ? "shadow-md shadow-card-bg" : ""
       }`}
     >

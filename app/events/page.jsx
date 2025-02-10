@@ -29,13 +29,10 @@ async function Members(props) {
         <SearchBar />
       </div>
 
-      <div className=" mt-10">
-      <div className="flex justify-center md:justify-start ">
-        <h1 className="font-bold text-the-white text-3xl mb-10 ">All Events</h1>
-      </div>
+  
 
     <PopularEvents/>
-      </div>
+    
 
       <Suspense fallback={<Skeleton className="h-10 mt-10 rounded-lg" />}>
         <div className="flex items-center justify-center mt-10">

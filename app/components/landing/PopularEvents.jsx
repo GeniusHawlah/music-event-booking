@@ -15,7 +15,7 @@ async function PopularEvents() {
       id="popular_events"
       className="gen-padding pt-20 pb-20 scroll-mt-20 bg-pry-bg"
     >
-      <h1 className="text-[24px] md:mb-2 890:text-[30px] text-header-color  font-bold leading-9 text-center">
+      <h1 className="text-[24px] md:mb-2 890:text-[30px] text-header-color text-the-white font-bold leading-9 text-center">
         POPULAR EVENTS
       </h1>
 

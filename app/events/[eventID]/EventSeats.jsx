@@ -12,19 +12,19 @@ function EventSeats({ eventID }) {
   const fetchEventHandlerFrontend = generalStore(
     (state) => state.fetchEventHandlerFrontend
   );
-
+  const [selectedSeat, setSelectedSeat] = useState(null);
   useEffect(() => {
     if (!eventID) return; // Ensure eventID exists before making the request
     const timer = setInterval(() => {
       fetchEventHandlerFrontend({ eventID });
     }, 5000);
     return () => clearInterval(timer);
-  }, [eventID]);
+  }, [eventID, fetchEventHandlerFrontend]);
 
   const eventData = generalStore((state) => state.eventData);
   const frontendFetching = generalStore((state) => state.frontendFetching);
 
-  const [selectedSeat, setSelectedSeat] = useState(null);
+
   const [selectedSeatNumber, setSelectedSeatNumber] = useState(null);
   const [openModal, setOpenModal] = useState(false);
 

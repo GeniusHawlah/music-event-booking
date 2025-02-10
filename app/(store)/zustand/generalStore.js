@@ -123,7 +123,7 @@ export const generalStore = create(
             if (result.status === "success") {
               set({ eventData: result?.event });
               set({ frontendFetching: false });
-              console.log(result?.message);
+              // console.log(result?.message);
               return {
                 status: "success",
                 message: result?.message,
