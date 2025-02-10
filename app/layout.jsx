@@ -7,7 +7,6 @@ import { ThemeModeScript } from "flowbite-react";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/Footer";
 import ToastProvider from "@/wrappers/ToastProvider";
-import TransparentOverlay from "./components/TransparentOverlay";
 import { Theme } from "@radix-ui/themes";
 import GeneralLoading from "./components/GeneralLoading";
 
@@ -69,7 +68,7 @@ export default function RootLayout({ children }) {
         className={` antialiased text-base font-normal w-full bg-pry-bg text-the-white `}
       >
         <Theme>
-          <TransparentOverlay />
+          {/* <TransparentOverlay /> */}
           <GeneralLoading />
           <ToastProvider />
           <section className={`${lato.className} `}>
