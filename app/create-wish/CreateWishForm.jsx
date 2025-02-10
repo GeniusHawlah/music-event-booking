@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { generalStore } from "../(store)/zustand/generalStore";
-import { userStore } from "../(store)/zustand/userStore";
 import { format } from "date-fns";
 
 import { Icon } from "@iconify/react";
@@ -12,9 +11,7 @@ function CreateWishForm() {
 
   const sendingData = generalStore((state) => state.sendingData);
   const createWishHandler = generalStore((state) => state.createWishHandler);
-  const setCurrentAuthComponent = generalStore(
-    (state) => state.setCurrentAuthComponent
-  );
+
 
   const [itemName, setItemName] = useState("");
   const [itemLink, setItemLink] = useState("");

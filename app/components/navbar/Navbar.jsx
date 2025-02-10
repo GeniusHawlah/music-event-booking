@@ -10,21 +10,14 @@ import { generalStore } from "../../(store)/zustand/generalStore";
 import { Icon } from "@iconify/react";
 import { Skeleton } from "@radix-ui/themes";
 import SearchBar from "./SearchBar";
-import { userStore } from "@/app/(store)/zustand/userStore";
-import { getRandomFutureDate } from "@/utils/helpers";
 
 function Navbar() {
   const router = useRouter();
   const [scroll, setScroll] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
 
-  const showUserDropdown = generalStore((state) => state.showUserDropdown);
-  const setShowUserDropdown = generalStore(
-    (state) => state.setShowUserDropdown
-  );
+
   const menuClicked = generalStore((state) => state.menuClicked);
   const refreshHandler = generalStore((state) => state.refreshHandler);
-  const logoutHandler = userStore((state) => state.logoutHandler);
   const setMenuClicked = generalStore((state) => state.setMenuClicked);
   const createEventHandler = generalStore((state) => state.createEventHandler);
 
