@@ -30,7 +30,7 @@ function PaginationButtons({
   return (
   //  <Suspense fallback={<Skeleton className="h-10 mt-10 rounded-lg" />}>
       <div className="mt-1">
-        <p className="text-center text-sm">
+        <p className="text-center text-white text-sm">
           Page {currentPage} of {totalNumberOfPages}
         </p>
         <div className="flex items-center gap-x-5 mt-2 text-sm text-text-gray">
@@ -40,7 +40,7 @@ function PaginationButtons({
               changePage(1);
             }}
             disabled={currentPage === 1}
-            className="rounded w-9 h-9  duration-300 hover:bg-gray-50 flex justify-center items-center  border border-red-900  disabled:text-gray-300 disabled:border-gray-300"
+            className="rounded w-9 h-9  duration-300 hover:bg-gray-700 flex justify-center items-center  border border-the-pink text-the-white disabled:text-gray-700 disabled:border-gray-700 disabled:hover:bg-transparent"
           >
             1
           </button>
@@ -51,7 +51,7 @@ function PaginationButtons({
               changePage(currentPage - 1);
             }}
             disabled={currentPage === 1}
-            className="rounded   duration-300 hover:bg-gray-50 flex justify-center items-center w-9 h-9 border border-red-900 text-red-900  disabled:text-gray-300 disabled:border-gray-300"
+            className="rounded   duration-300 hover:bg-gray-700 flex justify-center items-center w-9 h-9 border border-the-pink text-the-white  disabled:text-gray-700 disabled:border-gray-700 disabled:hover:bg-transparent"
           >
             <Icon icon="mingcute:left-line" className="text-xl " />
           </button>
@@ -62,7 +62,7 @@ function PaginationButtons({
               changePage(currentPage + 1);
             }}
             disabled={currentPage === totalNumberOfPages}
-            className="rounded w-9 h-9  duration-300 hover:bg-gray-50 flex justify-center items-center  border border-red-900 text-red-900  disabled:text-gray-300 disabled:border-gray-300"
+            className="rounded w-9 h-9  duration-300 hover:bg-gray-700 flex justify-center items-center  border border-the-pink text-the-white  disabled:text-gray-700 disabled:border-gray-700 disabled:hover:bg-transparent"
           >
             <Icon icon="mingcute:right-line" className="text-xl" />
           </button>
@@ -73,7 +73,7 @@ function PaginationButtons({
               changePage(totalNumberOfPages);
             }}
             disabled={currentPage === totalNumberOfPages}
-            className="rounded w-9 h-9  duration-300 hover:bg-gray-50 flex justify-center items-center  border border-red-900 text-red-900 disabled:text-gray-300 disabled:border-gray-300"
+            className="rounded w-9 h-9  duration-300 hover:bg-gray-700 flex justify-center items-center  border border-the-pink text-the-white disabled:text-gray-700 disabled:border-gray-700 disabled:hover:bg-transparent"
           >
             {totalNumberOfPages}
           </button>

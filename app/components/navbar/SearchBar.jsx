@@ -1,7 +1,7 @@
 "use client";
 
-import { Icon } from "@iconify/react";
 import React, { Suspense, useState } from "react";
+import { Icon } from "@iconify/react";
 import { generalStore } from "../../(store)/zustand/generalStore";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Skeleton } from "@radix-ui/themes";
@@ -17,26 +17,37 @@ function SearchBar() {
   function routeTo(url) {
     router.push(`${url}?${params.toString()}`);
   }
+  
+  const [focused, setFocused] = useState(false);
 
   function returnAll() {
     params.set("search", "");
     params.set("page", 1);
     router.push(`?${params.toString()}`);
+
   }
+
+
 
   // const [searchKeyword, setSearchKeyword] = useState(params?.get("search"));
 
   async function handleSearch(search) {
-    await refreshHandler({ tag: "events" });
+    await refreshHandler({ tag: "events", path: "/events" });
     params.set("page", 1);
     params.set("search", search.toString());
-    router.push(`/events?${params.toString()}`);
+    router.push(`?${params.toString()}`);
   }
 
   return (
     // <Suspense fallback={<Skeleton className="h-10 mt-10 rounded-lg" />}>
     <div className="flex items-center ">
       <input
+        onFocus={() => {
+          setFocused(true);
+        }}
+        onBlur={() => {
+          setFocused(false);
+        }}
         onChange={(e) => {
           setSearchKeyword(e.target.value);
           !e.target.value ? returnAll() : null;
@@ -48,10 +59,14 @@ function SearchBar() {
         }}
         value={searchKeyword}
         type="text"
-        className="py-2 pl-3 rounded-l-full border-l bg-[#1A1B3A]  border-outline-color border-y focus:outline-none h-11 font-light placeholder:text-sm"
+        className="py-2 pl-3 rounded-l-full border-l bg-[#1A1B3A]  border-outline-color focus:border-the-pink border-y focus:outline-none   text-the-white h-11 font-light placeholder:text-sm text-base "
         placeholder="Search events..."
       />
-      <div className="bg-[#1A1B3A] text-the-pink  p-2  rounded-r-full border-y border-outline-color border-r h-11 flex items-center justify-center">
+      <div
+        className={`bg-[#1A1B3A] text-the-pink  p-2  rounded-r-full border-y border-outline-color  border-r h-11 flex items-center justify-center ${
+          focused ? "border-the-pink" : ""
+        }`}
+      >
         <div className="flex items-center gap-x-1">
           {searchKeyword && (
             <Icon

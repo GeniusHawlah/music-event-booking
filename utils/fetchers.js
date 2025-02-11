@@ -1,4 +1,3 @@
-
 import { unstable_cache } from "next/cache";
 import { db } from "./db";
 
@@ -26,12 +25,7 @@ export const fetchEventData = unstable_cache(
 
 // >FETCH EVENTS
 export const fetchEvents = unstable_cache(
-  async ({
-    skip = undefined,
-    take = undefined,
-    search = "",
-    date = "",
-  } = {}) => {
+  async ({ skip = undefined, take = undefined, search = "" } = {}) => {
     const valid = await db.event?.findMany({
       where: {
         ...(search && {
@@ -40,14 +34,7 @@ export const fetchEvents = unstable_cache(
             { description: { contains: search, mode: "insensitive" } },
             { location: { contains: search, mode: "insensitive" } },
             { genre: { contains: search, mode: "insensitive" } },
-            {
-              artistes: {
-                some: {
-                  contains: search,
-                  mode: "insensitive",
-                },
-              },
-            },
+            { artistes: { hasSome: [search] } },
           ],
         }),
       },

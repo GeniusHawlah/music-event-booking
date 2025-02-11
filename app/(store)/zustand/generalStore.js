@@ -99,7 +99,7 @@ export const generalStore = create(
             if (!res.ok) {
               console.log("Res not Ok");
               set({ frontendFetching: false });
-              toast.error("Response not OK!");
+              // toast.error("Response not OK!");
               return {
                 status: "fail",
                 message: "Response not OK!",

@@ -15,14 +15,15 @@ const EventCard = ({
   imageUrl,
   artistes,
   eventID,
+  seats,
 }) => {
   const router = useRouter();
 
   const newArtistes = artistes.map((artist) => artist);
 
+  const availableSeats = seats?.filter((seat) => seat.isTaken === false);
+
   const [countdown, setCountdown] = useState("");
-
-
 
   // const searchParams = useSearchParams();
   // const params = new URLSearchParams(searchParams);
@@ -40,6 +41,9 @@ const EventCard = ({
 
   return (
     <div
+      // onMouseOver={() => {
+      //   console.log(seats);
+      // }}
       onClick={() => {
         router.push(`/events/${eventID}`);
       }}
@@ -68,7 +72,12 @@ const EventCard = ({
           {location && (
             <p className="text-sm text-[#8B8EBB]">
               <span className="font-medium text-the-white">Location:</span>{" "}
-              {location}
+              {location}.{" "}
+              {availableSeats && (
+                <span className="font-medium text-green-400">
+                  ({availableSeats?.length} seats available)
+                </span>
+              )}
             </p>
           )}
           <p className="text-sm text-[#8B8EBB]">

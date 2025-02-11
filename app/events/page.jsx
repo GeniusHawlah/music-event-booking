@@ -4,7 +4,8 @@ import SearchBar from "../components/navbar/SearchBar";
 
 import { Skeleton } from "@radix-ui/themes";
 import PaginationButtons from "../components/PaginationButtons";
-import PopularEvents from "../components/landing/PopularEvents";
+import AllEvents from "./AllEvents";
+import { Allerta } from "next/font/google";
 
 async function Members(props) {
   const searchParams = await props.searchParams;
@@ -12,15 +13,7 @@ async function Members(props) {
   const page = parseInt(searchParams.page) || 1;
   const itemsPerPage = 2;
 
-  const events = fetchEvents({
-    skip: (page - 1) * itemsPerPage,
-    take: itemsPerPage,
-    search,
-  });
 
-  const eventsCount = fetchEvents({
-    search,
-  });
 
   return (
     <div className="gen-padding bg-pry-bg" key={Math.random()}>
@@ -29,21 +22,13 @@ async function Members(props) {
         <SearchBar />
       </div>
 
-  
+      <AllEvents
+        search={search}
+        page={page}
+        itemsPerPage={itemsPerPage}
+      />
 
-    <PopularEvents/>
-    
-
-      <Suspense fallback={<Skeleton className="h-10 mt-10 rounded-lg" />}>
-        <div className="flex items-center justify-center mt-10">
-          <PaginationButtons
-            paginatedItems={events}
-            totalItems={eventsCount}
-            itemsPerPage={itemsPerPage}
-            currentPage={page}
-          />
-        </div>
-      </Suspense>
+   
     </div>
   );
 }

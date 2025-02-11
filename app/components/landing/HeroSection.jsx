@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 function HeroSection(props) {
   const router = useRouter();
 
-  const heroTitle = "A <span style='color: #D726A1'>few taps away</span>  from your next groove.";
+  const heroTitle = "A memorable live experience   <span style='color: #D726A1'>starts with</span> a seamless booking process.";
 
   const heroSubtitle =
     "No more endless scrolling - only the best music events at your fingertips.";
