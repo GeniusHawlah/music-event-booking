@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MUSIC EVENT BOOKING APP  
 
-## Getting Started
+### GitHub Link:  
+[music-event-booking](#) *(https://github.com/GeniusHawlah/music-event-booking)*  
 
-First, run the development server:
+I don't think the code will work locally unless I expose the database string, email credentials, and other backend-sensitive information. Therefore, as suggested in the instruction document for the test, below is the link to the live demo.  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Live Demo:  
+[Music Event Booking App](https://fobework-music-event-booking.vercel.app)  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📖 Documentation  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🎟 Homepage  
+- Below the hero section, there is a grid of **popular events** (events with the highest bookings), retrieved from a MongoDB database and sorted by event dates (earliest first).  
+- The nav bar has a **search feature** (icon on mobile, input field on larger screens) allows users to search by **event title, description, genre, or artist name**.  
 
-## Learn More
+### 📌 Event Details Page  
+- Clicking on an event leads to the **event details page**, displaying more detailed event relevant details.  
+- A seat selection system shows serialized seats, based on the number of seats set when creating an event.
+- **Seat Availability:**  
+  - Available seats are green.  
+  - Booked seats are red, disabled, and have a forbidden mouse event.  
+- Clicking an available seat triggers a **booking form** where users input their name and email before clicking Book Seat.  
+- On booking, the system updates the database, marking the seat as booked and updating the **event attendees list**.  This attendee list isn't displayed anywhere in this submission, it's just to take record of the list of people attending an event.
 
-To learn more about Next.js, take a look at the following resources:
+### 🔄 Real-Time Seat Updates  
+- Booked seats turn red in real-time, ensuring other users see the updated status.  
+- Seats refresh every five seconds for near-instant updates.  
+- If for some reasons, an already booked seat that's yet to update on frontend is selected by a user, the backend handles it gracefully, preventing conflicts. Even for deleted events and some nearly impossible scenarios.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### ⏳ Event Countdown & Notifications  
+- Each event has a countdown timer, retrieved from the backend and updated periodically.  
+- A notification icon on the navbar to inform users about event cancellations or reschedulings.  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 📱 Responsiveness & Design  
+- The entire platform is fully responsive, supporting **cross-device and cross-browser compatibility**.  
+- **Theme:** A **neon light and cosmic-inspired design** (space dark color with star-like lights).  
 
-## Deploy on Vercel
+### 🛠️ Tech Stack  
+- **Next.js 15 App Router**  
+- **TailwindCSS** (styling)  
+- **Flowbite React** (some basic UI components)  
+- **MongoDB** (database)  
+- **Prisma** (ODM & schema enforcement)  
+- **Zod** (input validation)  
+- **Zustand** (frontend state management)  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🔍 SEO & Metadata  
+- The event details page is pre-generated using Next.js **dynamic segments**, ensuring SEO optimization.  
+- Each event page has unique metadata, allowing proper preview when shared on social media (title, description, and image).  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 🚧 Challenges Faced  
+1. **Static vs. Dynamic Rendering**:  
+   - I initially struggled whether to utilize `generateStaticParams` for event pages or a state-based approach. I chose `generateStaticParams` for SEO benefits.  
+
+2. **Color Combination Challenges**:  
+   - As I'm used to pre-designed Figma projects, making color-combination decisions from scratch led to unnecessary indecision.  
+
+---
