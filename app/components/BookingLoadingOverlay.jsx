@@ -18,8 +18,8 @@ function BookingLoadingOverlay() {
           className="text-pry-bg text-4xl "
           icon="eos-icons:bubble-loading"
         />
-        <p className="text-base  text-center ">
-          Kindly wait while we debit your credit card &#8358;200K...
+        <p className="text-lg  text-center text-green-600">
+          Deducting &#8358;200K from your credit card...
         </p>
       </div>
     </div>
