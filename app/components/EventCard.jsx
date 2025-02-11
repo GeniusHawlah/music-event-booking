@@ -47,7 +47,7 @@ const EventCard = ({
       onClick={() => {
         router.push(`/events/${eventID}`);
       }}
-      className="max-w-md mx-auto bg-[#27284A] rounded-xl shadow-md border border-[#3A3D6D] overflow-hidden shadow-sec-bg hover:scale-95 duration-300 cursor-pointer"
+      className="w-full mx-auto bg-[#27284A] rounded-xl shadow-md border border-[#3A3D6D] overflow-hidden shadow-sec-bg hover:scale-95 duration-300 cursor-pointer"
     >
       {/*//> Event Image */}
       <div className="relative w-full h-56">

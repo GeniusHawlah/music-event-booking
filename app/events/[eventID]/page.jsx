@@ -56,7 +56,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { eventID } = await params;
 
-  const eventData = await fetchEventData({ id: eventID });
+  const eventData = await fetchEventData({ eventID });
 
   return {
     title: `${eventData?.title}`,

@@ -109,8 +109,8 @@ function Navbar() {
               onClick={() => {
                 router.push("/events");
               }}
-              icon="iconamoon:search-bold"
-              className="text-2xl 400:text-3xl text-the-pink hover:text-hover-blue cursor-pointer 830:hidden"
+              icon="majesticons:search-line"
+              className="text-3xl text-the-pink hover:text-hover-blue cursor-pointer 830:hidden"
             />
 
           {/* //>Notification Popover */}
@@ -121,7 +121,7 @@ function Navbar() {
             onClick={() => {
               router.push("/events");
             }}
-            className={`  text-the-white bg-the-pink hover:bg-hover-blue px-4 py-1 text-base rounded font-medium `}
+            className={`  text-the-white bg-the-pink hover:bg-hover-blue px-2 350:px-4 py-1 text-base rounded font-medium `}
           >
             Get Started
           </button>

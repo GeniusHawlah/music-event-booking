@@ -66,7 +66,6 @@ export const fetchEvents = unstable_cache(
 );
 
 // >FETCH POPULAR EVENTS
-// >FETCH POPULAR EVENTS
 export const fetchPopularEvents = unstable_cache(
   async ({ skip = undefined, take = undefined, search = "" } = {}) => {
     const valid = await db.event?.findMany({

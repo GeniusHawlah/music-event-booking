@@ -18,7 +18,7 @@ export async function POST(req) {
       from: { name: fromName, address: process.env.EMAIL_ADDRESS },
       to: toEmail,
       subject: subject,
-      html: `<h1>${body}</h1>`,
+      html: `${body}`,
     };
 
     await transporter.sendMail(mailOptions);

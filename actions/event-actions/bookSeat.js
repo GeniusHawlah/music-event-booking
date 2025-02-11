@@ -116,19 +116,47 @@ export const bookSeat = async ({
     });
 
     // >Send email
-  const res =  await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/send-email`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        toEmail: email,
-        fromName: "Fobework",
-        subject: "Seat Reservation",
-        body: `Hello ${firstName}! You have booked seat number ${seatNumber} at the upcoming event titled ${event?.title}. Have fun!`,
-      }),
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/send-email`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          toEmail: email,
+          fromName: "Fobework Music Event",
+          subject: "Seat Reservation",
+          body: `<html>
+        <head>
+          <style>
+            body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
+            .container { max-width: 500px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
+            .header { background: #D726A1; color: white; text-align: center; padding: 10px 0; font-size: 20px; font-weight: bold; border-radius: 8px 8px 0 0; }
+            .content { padding: 20px; text-align: center; }
+            .button { display: inline-block; background: #D726A1; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+            .footer { margin-top: 20px; text-align: center; font-size: 12px; color: #777; }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="header">🎶 Your Seat is Booked! 🎶</div>
+            <div class="content">
+              <p>Hello <strong>${firstName}</strong>,</p>
+              <p>You have successfully booked <strong>Seat #${seatNumber}</strong> for the event <strong>${event?.title}</strong>!</p>
+              <p>Get ready for an amazing experience! 🎤🎼</p>
+              <a href="https://fobework-music-event-booking.vercel.app/events/${event?.id}" class="button">View Event Details</a>
+            </div>
+            <div class="footer">
+              © 2025 Fobework Music Event. All rights reserved.
+            </div>
+          </div>
+        </body>
+      </html>`,
+        }),
+      }
+    );
 
-    const result = await res.json()
-    console.log(result)
+    const result = await res.json();
+    console.log(result);
 
     console.log("Seat booked successfully!");
     revalidatePath(`/events/${eventID}`);
