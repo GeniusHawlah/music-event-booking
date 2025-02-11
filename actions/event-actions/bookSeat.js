@@ -141,7 +141,7 @@ export const bookSeat = async ({
             <div class="header">🎶 Your Seat is Booked! 🎶</div>
             <div class="content">
               <p>Hello <strong>${firstName}</strong>,</p>
-              <p>You have successfully booked <strong>Seat #${seatNumber}</strong> for the event <strong>${event?.title}</strong>!</p>
+              <p>You have successfully booked <strong style="font-weight: bold;">Seat #${seatNumber}</strong> for the event <strong style="font-weight: bold;">${event?.title}</strong>!</p>
               <p>Get ready for an amazing experience! 🎤🎼</p>
               <a href="https://fobework-music-event-booking.vercel.app/events/${event?.id}" class="button">View Event Details</a>
             </div>
