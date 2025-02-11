@@ -36,8 +36,8 @@ function BookingModal({ openModal, setOpenModal, eventID, seatNumber }) {
           onClick={(e) => {
             e.stopPropagation();
           }}
-        className="bg-white text-gray-800 rounded-md">
-          <Modal.Header className=" font-semibold  ">
+        className="bg-white text-gray-900 rounded-md">
+          <Modal.Header className=" font-semibold text-gray-900 ">
             FILL BOOKING DETAILS
           </Modal.Header>
           <Modal.Body>
