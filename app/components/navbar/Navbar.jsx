@@ -11,6 +11,7 @@ import { generalStore } from "../../(store)/zustand/generalStore";
 import { Icon } from "@iconify/react";
 import { Skeleton } from "@radix-ui/themes";
 import SearchBar from "./SearchBar";
+import { getRandomFutureDate } from "@/utils/helpers";
 
 function Navbar() {
   const router = useRouter();
@@ -76,18 +77,18 @@ function Navbar() {
               onClick={() => {
                 router.push("/#popular_events");
                 // createEventHandler({
-                //   title: "Fela Kuti Live Tribute Concert",
-                //   description:
-                //     "A special tribute concert to honor the legendary Afrobeat pioneer Fela Kuti, featuring performances by top Nigerian artists.",
+                //   title: "Global Fusion Music Festival: Tokyo Edition",
+                //   description: "Immerse yourself in a night of global music sensations, featuring performances by artists from Japan, Korea, and beyond.",
                 //   timeCreated: new Date().toISOString(),
                 //   eventDate: getRandomFutureDate(),
-                //   numberOfSeats: 100,
+                //   numberOfSeats: 490, // Varying seat number
                 //   lastModified: new Date().toISOString(),
-                //   artistes: ["Seun Kuti", "Femi Kuti", "Burna Boy", "Olamide"],
-                //   eventImage: "https://picsum.photos/606/406",
-                //   genre: "Afrobeat",
-                //   location: "National Theatre, Lagos, Nigeria",
-                //   type: "local",
+                //   artistes: ["Hikaru Utada", "BTS", "BLACKPINK", "Ariana Grande"],
+                //   eventImage: "https://picsum.photos/620/420",
+                //   genre: "Pop, K-pop, EDM",
+                //   location: "Tokyo Dome, Tokyo, Japan",
+                //   type: "international"
+
                 // });
               }}
               className=" hover:text-hover-blue text-the-white"
