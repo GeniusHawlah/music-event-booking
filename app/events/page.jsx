@@ -11,7 +11,7 @@ async function Members(props) {
   const searchParams = await props.searchParams;
   const { limit, offset, status, search } = searchParams;
   const page = parseInt(searchParams.page) || 1;
-  const itemsPerPage = 2;
+  const itemsPerPage = 30;
 
 
 

@@ -34,6 +34,7 @@ function HeroSection(props) {
               width={792}
               height={667}
               src={bgImage}
+              priority
               // style={{ backgroundImage: `url(${bgUrl})` }}
             />
           </div>

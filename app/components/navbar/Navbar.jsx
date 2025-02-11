@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import React, { Suspense, useEffect, useState } from "react";
 import logo from "@/public/images/logo.png";
 import MobileNav from "./MobileNav";
+import NotificationPopover from "./NotificationPopover";
 import { generalStore } from "../../(store)/zustand/generalStore";
 import { Icon } from "@iconify/react";
 import { Skeleton } from "@radix-ui/themes";
@@ -104,15 +105,16 @@ function Navbar() {
           </div>
 
           {/* //>Search Icon */}
-          {pathName === "/" && (
-            <Icon
+          <Icon
               onClick={() => {
                 router.push("/events");
               }}
               icon="iconamoon:search-bold"
               className="text-2xl 400:text-3xl text-the-pink hover:text-hover-blue cursor-pointer 830:hidden"
             />
-          )}
+
+          {/* //>Notification Popover */}
+          <NotificationPopover/>
 
           {/* //>Get Started */}
           <button
