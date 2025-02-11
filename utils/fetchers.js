@@ -64,3 +64,50 @@ export const fetchEvents = unstable_cache(
   ["events"],
   { revalidate: 5, tags: ["events"] }
 );
+
+// >FETCH POPULAR EVENTS
+// >FETCH POPULAR EVENTS
+export const fetchPopularEvents = unstable_cache(
+  async ({ skip = undefined, take = undefined, search = "" } = {}) => {
+    const valid = await db.event?.findMany({
+      where: {
+        ...(search && {
+          OR: [
+            { title: { contains: search, mode: "insensitive" } },
+            { description: { contains: search, mode: "insensitive" } },
+            { location: { contains: search, mode: "insensitive" } },
+            { genre: { contains: search, mode: "insensitive" } },
+            { artistes: { hasSome: [search] } },
+          ],
+        }),
+      },
+      skip,
+      take,
+    });
+
+    if (valid) {
+      let events = valid
+        .map((event) => {
+          const seats = event.seats ? JSON.parse(event.seats) : [];
+
+          // Count booked seats (isTaken: true)
+          const bookedSeats = seats.filter((seat) => seat.isTaken).length;
+
+          return {
+            ...event,
+            attendees: event.attendees ? JSON.parse(event.attendees) : [],
+            seats,
+            bookedSeats, // Used for sorting
+          };
+        })
+        .sort((a, b) => b.bookedSeats - a.bookedSeats); // Sort by highest booked first
+
+      return events;
+    }
+
+    return [];
+  },
+  ["popular_events"],
+  { revalidate: 5, tags: ["popular_events"] }
+);
+

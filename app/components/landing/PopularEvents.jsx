@@ -2,12 +2,11 @@ import Image from "next/image";
 import React, { Suspense } from "react";
 import EventList from "@/app/components/landing/EventList";
 import { Skeleton } from "@radix-ui/themes";
-import { fetchEvents } from "@/utils/fetchers";
+import { fetchPopularEvents } from "@/utils/fetchers";
 
 async function PopularEvents({ search, page, itemsPerPage }) {
-  // const events = fetchEvents({ take: 27 });
 
-  const events = fetchEvents({
+  const events = fetchPopularEvents({
     take: 27,
   });
 
