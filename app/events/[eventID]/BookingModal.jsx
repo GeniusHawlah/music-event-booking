@@ -8,10 +8,17 @@ import { generalStore } from "@/app/(store)/zustand/generalStore";
 function BookingModal({ openModal, setOpenModal, eventID, seatNumber }) {
   const bookSeatHandler = generalStore((state) => state.bookSeatHandler);
   const booking = generalStore((state) => state.booking);
+  const firstName = generalStore((state) => state.firstName);
+  const lastName = generalStore((state) => state.lastName);
+  const email = generalStore((state) => state.email);
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
+  const setLastName = generalStore((state) => state.setLastName);
+  const setEmail = generalStore((state) => state.setEmail);
+  const setFirstName = generalStore((state) => state.setFirstName);
+
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
+  // const [email, setEmail] = useState("");
 
   const emailInputRef = useRef(null);
 
@@ -39,7 +46,7 @@ function BookingModal({ openModal, setOpenModal, eventID, seatNumber }) {
           className="bg-white text-gray-900 rounded-md"
         >
           <Modal.Header className=" font-semibold  ">
-            <h1 className="text-gray-900">FILL BOOKING DETAILS</h1>
+            <p className="text-gray-900">FILL BOOKING DETAILS</p>
           </Modal.Header>
           <Modal.Body>
             <div className="space-y-6">
@@ -56,7 +63,6 @@ function BookingModal({ openModal, setOpenModal, eventID, seatNumber }) {
                     ref={emailInputRef}
                     onChange={(e) => {
                       let value = e.target.value;
-                      value = value.replace(/\s/g, ""); // Remove all spaces
                       setEmail(value.toLowerCase());
                     }}
                     required
@@ -64,7 +70,7 @@ function BookingModal({ openModal, setOpenModal, eventID, seatNumber }) {
                     disabled={booking}
                     value={email}
                     type="email"
-                    className="bg-gray-50  border focus:outline-1  focus:outline-gray-700 w-full rounded-md  px-2 py-2 mt-1 placeholder:text-sm text-sm "
+                    className="bg-gray-50  border focus:outline-1  focus:outline-the-pink w-full rounded-md  px-2 py-2 mt-1 placeholder:text-sm text-sm "
                     placeholder="example@email.com"
                   />
                 </div>
@@ -89,7 +95,7 @@ function BookingModal({ openModal, setOpenModal, eventID, seatNumber }) {
                     required
                     value={firstName}
                     type="text"
-                    className=" placeholder:text-sm bg-gray-50   focus:outline-1  focus:outline-gray-700 w-full rounded-md border px-2 py-2 mt-1 text-sm "
+                    className=" placeholder:text-sm bg-gray-50   focus:outline-1  focus:outline-the-pink w-full rounded-md border px-2 py-2 mt-1 text-sm "
                     placeholder="e.g John"
                   />
                 </div>
@@ -113,7 +119,7 @@ function BookingModal({ openModal, setOpenModal, eventID, seatNumber }) {
                     disabled={booking}
                     value={lastName}
                     type="text"
-                    className="placeholder:text-sm bg-gray-50   focus:outline-1  focus:outline-gray-700 w-full rounded-md border px-2 py-2 mt-1 text-sm "
+                    className="placeholder:text-sm bg-gray-50   focus:outline-1  focus:outline-the-pink w-full rounded-md border px-2 py-2 mt-1 text-sm "
                     placeholder="Doe"
                   />
                 </div>

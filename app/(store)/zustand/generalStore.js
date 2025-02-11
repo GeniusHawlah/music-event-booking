@@ -25,6 +25,15 @@ export const generalStore = create(
           menuClicked: false,
           setMenuClicked: (value) => set({ menuClicked: value }),
 
+          firstName: "",
+          setFirstName: (value) => set({ firstName: value }),
+
+          lastName: "",
+          setLastName: (value) => set({ lastName: value }),
+
+          email: "",
+          setEmail: (value) => set({ email: value }),
+
           searchKeyword: "",
           setSearchKeyword: (value) => set({ searchKeyword: value }),
 
@@ -178,6 +187,9 @@ export const generalStore = create(
         partialize: (state) => ({
           searchKeyword: state.searchKeyword,
           eventCategory: state.eventCategory,
+          email: state.email,
+          lastName: state.lastName,
+          firstName: state.firstName,
         }),
       }
     )

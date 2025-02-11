@@ -12,6 +12,9 @@ function EventDetailsComponents({ eventData }) {
   const eventDate = resolvedEventData?.eventDate;
 
   const [countdown, setCountdown] = useState("");
+  
+
+  const availableSeats = resolvedEventData?.seats?.filter(seat => seat.isTaken === false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -105,7 +108,11 @@ function EventDetailsComponents({ eventData }) {
             </span>
           </p>
           <p className="text-sm text-[#A7A2C3] mt-1">
-            📍 <span className="font-medium">{resolvedEventData.location}</span>
+            📍 <span className="font-medium">{resolvedEventData.location}    {availableSeats && (
+                <span className="font-medium text-green-400">
+                  ({availableSeats?.length} seats available)
+                </span>
+              )}</span>
           </p>
           <p className="text-sm text-[#A7A2C3] mt-1">
             🎵 <span className="font-medium">{resolvedEventData.genre}</span>

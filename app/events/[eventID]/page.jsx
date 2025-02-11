@@ -36,7 +36,11 @@ async function EventID({ params }) {
         <EventDetailsComponents eventData={eventData} />
       </Suspense>
 
-      <EventSeats eventID={eventID} />
+      {/* <Suspense
+        fallback={<Skeleton className="h-56 mt-10  rounded-lg !bg-gray-500 w-full" />}
+      > */}
+        <EventSeats eventID={eventID} />
+      {/* </Suspense> */}
     </div>
   );
 }

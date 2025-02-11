@@ -24,7 +24,6 @@ function EventSeats({ eventID }) {
   const eventData = generalStore((state) => state.eventData);
   const frontendFetching = generalStore((state) => state.frontendFetching);
 
-
   const [selectedSeatNumber, setSelectedSeatNumber] = useState(null);
   const [openModal, setOpenModal] = useState(false);
 
@@ -80,7 +79,7 @@ function EventSeats({ eventID }) {
         setOpenModal={setOpenModal}
       />
 
-      {frontendFetching && !seats && (
+      { !seats && (
         <Skeleton className="h-56 mt-10 rounded-lg !bg-gray-500 w-full" />
       )}
 
