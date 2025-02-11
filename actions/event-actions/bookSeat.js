@@ -134,14 +134,17 @@ export const bookSeat = async ({
             .content { padding: 20px; text-align: center; }
             .button { display: inline-block; background: #D726A1; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
             .footer { margin-top: 20px; text-align: center; font-size: 12px; color: #777; }
+         
+  .important { color: #02fd16; }
+
           </style>
         </head>
         <body>
           <div class="container">
             <div class="header">🎶 Your Seat is Booked! 🎶</div>
             <div class="content">
-              <p>Hello <strong>${firstName}</strong>,</p>
-              <p>You have successfully booked <strong style="font-weight: bold;">Seat #${seatNumber}</strong> for the event <strong style="font-weight: bold;">${event?.title}</strong>!</p>
+              <p>Hello <strong class="important">${firstName}</strong>,</p>
+              <p>You have successfully booked <strong class="important">Seat #${seatNumber}</strong> for the event <strong class="important">${event?.title}</strong>!</p>
               <p>Get ready for an amazing experience! 🎤🎼</p>
               <a href="https://fobework-music-event-booking.vercel.app/events/${event?.id}" class="button">View Event Details</a>
             </div>
