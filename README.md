@@ -29,6 +29,7 @@ I don't think the code will work locally unless I expose the database string, em
 - Booked seats turn red in real-time, ensuring other users see the updated status.  
 - Seats refresh every five seconds for near-instant updates.  
 - If for some reasons, an already booked seat that's yet to update on frontend is selected by a user, the backend handles it gracefully, preventing conflicts. Even for deleted events and some nearly impossible scenarios.
+- You get an email upon a successful booking.
 
 ### ⏳ Event Countdown & Notifications  
 - Each event has a countdown timer, retrieved from the backend and updated periodically.  
