@@ -18,7 +18,7 @@ function NotificationPopover() {
               Event Rescheduled!
             </h3>
           </div>
-          <div className="px-3 py-2">
+          <div className="px-3 py-2 bg-white">
             <p>
               The event{" "}
               <span className="text-black">
