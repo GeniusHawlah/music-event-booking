@@ -3,7 +3,7 @@
 ### GitHub Link:  
 [music-event-booking](#) *(https://github.com/GeniusHawlah/music-event-booking)*  
 
-I don't think the code will work locally unless I expose the database string, email credentials, and other backend-sensitive information. Therefore, as suggested in the instruction document for the test, below is the link to the live demo.  
+I don't think the code will work locally unless I expose the database string, email credentials, and other backend-sensitive data. Therefore, as suggested in the instruction document for the test, below is the link to the live demo.  
 
 ### Live Demo:  
 [Music Event Booking App](https://fobework-music-event-booking.vercel.app)  
@@ -14,11 +14,12 @@ I don't think the code will work locally unless I expose the database string, em
 
 ### 🎟 Homepage  
 - Below the hero section, there is a grid of **popular events** (events with the highest bookings), retrieved from a MongoDB database. 
-- On the Events page, there is a grid all events paginated, retrieved from a MongoDB database and sorted by event dates (earliest first).  
+- On the Events page, there is a paginated grid of all events, retrieved from a MongoDB database and sorted by event dates (earliest first).  
 - The nav bar has a **search feature** (icon on mobile, input field on larger screens) allows users to search by event title, description, genre, or artist name.  
 
 ### 📌 Event Details Page  
-- Clicking on an event leads to the event details page, displaying more detailed event relevant details.  
+- The event images are random picsum images.
+- Clicking on an event leads to the event details page, displaying more detailed event relevant information.  
 - A seat selection system shows serialized seats, based on the number of seats set when creating an event.
 - **Seat Availability:**  
   - Available seats are green.  
