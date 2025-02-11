@@ -12,7 +12,7 @@ async function PopularEvents({ search, page, itemsPerPage }) {
   });
 
   return (
-    <div
+    <div id="popular_events"
       key={Math.random()}
       className="gen-padding pt-20 pb-20 scroll-mt-20 bg-pry-bg"
     >

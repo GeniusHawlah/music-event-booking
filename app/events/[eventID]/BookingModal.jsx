@@ -30,7 +30,7 @@ function BookingModal({ openModal, setOpenModal, eventID, seatNumber }) {
         show={openModal}
         size="md"
         onClose={() => setOpenModal(false)}
-        className="!bg-[#1c0b0b66] flex items-center"
+        className=" flex items-center"
       >
         <div
           onClick={(e) => {
@@ -42,7 +42,7 @@ function BookingModal({ openModal, setOpenModal, eventID, seatNumber }) {
           </Modal.Header>
           <Modal.Body>
             <div className="space-y-6">
-              <h3 className="text-base font-medium text-gray-900 dark:text-white">
+              <h3 className="text-base font-medium text-gray-900">
                 Fill the details to book your seat at the event.
               </h3>
 
