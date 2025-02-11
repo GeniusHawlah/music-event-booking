@@ -41,9 +41,6 @@ const EventCard = ({
 
   return (
     <div
-      // onMouseOver={() => {
-      //   console.log(seats);
-      // }}
       onClick={() => {
         router.push(`/events/${eventID}`);
       }}

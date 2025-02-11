@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React, { Suspense, useEffect, useState } from "react";
 import logo from "@/public/images/logo.png";
 import MobileNav from "./MobileNav";
@@ -11,21 +11,15 @@ import { generalStore } from "../../(store)/zustand/generalStore";
 import { Icon } from "@iconify/react";
 import { Skeleton } from "@radix-ui/themes";
 import SearchBar from "./SearchBar";
-import { getRandomFutureDate } from "@/utils/helpers";
 
 function Navbar() {
   const router = useRouter();
   const [scroll, setScroll] = useState(false);
 
-
   const menuClicked = generalStore((state) => state.menuClicked);
   const refreshHandler = generalStore((state) => state.refreshHandler);
   const setMenuClicked = generalStore((state) => state.setMenuClicked);
   const createEventHandler = generalStore((state) => state.createEventHandler);
-
-  // async function logOutHandler() {
-  //   await signOut({ redirect: false, callbackUrl: "/" });
-  // }
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -36,8 +30,6 @@ function Navbar() {
       }
     });
   }, []);
-
-  const pathName = usePathname();
 
   return (
     <div
@@ -53,6 +45,7 @@ function Navbar() {
             onClick={() => {
               // I use this to purge cache before routing
               refreshHandler({ tag: "events" });
+              refreshHandler({ tag: "popular_events" });
               refreshHandler({ tag: "event_data" });
               router.push("/");
             }}
@@ -107,15 +100,15 @@ function Navbar() {
 
           {/* //>Search Icon */}
           <Icon
-              onClick={() => {
-                router.push("/events");
-              }}
-              icon="majesticons:search-line"
-              className="text-3xl text-the-pink hover:text-hover-blue cursor-pointer 830:hidden"
-            />
+            onClick={() => {
+              router.push("/events");
+            }}
+            icon="majesticons:search-line"
+            className="text-3xl text-the-pink hover:text-hover-blue cursor-pointer 830:hidden"
+          />
 
           {/* //>Notification Popover */}
-          <NotificationPopover/>
+          <NotificationPopover />
 
           {/* //>Get Started */}
           <button

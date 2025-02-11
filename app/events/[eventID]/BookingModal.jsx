@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import { format } from "date-fns";
 import { Button, Checkbox, Label, Modal, Select } from "flowbite-react";
 import { generalStore } from "@/app/(store)/zustand/generalStore";
+import Info from "@/app/components/Info";
 
 function BookingModal({ openModal, setOpenModal, eventID, seatNumber }) {
   const bookSeatHandler = generalStore((state) => state.bookSeatHandler);
@@ -58,7 +59,7 @@ function BookingModal({ openModal, setOpenModal, eventID, seatNumber }) {
               <div className="w-full">
                 {/* //>Email */}
                 <div className="flex flex-col mt-8 text-gray-600 w-full">
-                  <label htmlFor="email">Email (*)</label>
+                  <label htmlFor="email" className="flex items-center gap-x-2">Email (*) <Info content="Use a functional email so you can receive booking details via email."/> </label>
                   <input
                     ref={emailInputRef}
                     onChange={(e) => {

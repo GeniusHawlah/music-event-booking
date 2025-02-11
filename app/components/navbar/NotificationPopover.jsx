@@ -9,7 +9,7 @@ function NotificationPopover() {
       placement="top"
       trigger="click"
       content={
-        <div className="w-64 text-sm text-gray-500">
+        <div className="w-64 text-sm text-gray-600">
           <div className="border-b border-gray-200 bg-white   px-3 py-2">
             <h3
               id="default-popover"

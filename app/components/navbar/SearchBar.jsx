@@ -17,17 +17,14 @@ function SearchBar() {
   function routeTo(url) {
     router.push(`${url}?${params.toString()}`);
   }
-  
+
   const [focused, setFocused] = useState(false);
 
   function returnAll() {
     params.set("search", "");
     params.set("page", 1);
     router.push(`?${params.toString()}`);
-
   }
-
-
 
   // const [searchKeyword, setSearchKeyword] = useState(params?.get("search"));
 
@@ -39,7 +36,6 @@ function SearchBar() {
   }
 
   return (
-    // <Suspense fallback={<Skeleton className="h-10 mt-10 rounded-lg" />}>
     <div className="flex items-center ">
       <input
         onFocus={() => {
@@ -91,7 +87,6 @@ function SearchBar() {
         </div>
       </div>
     </div>
-    // </Suspense>
   );
 }
 
