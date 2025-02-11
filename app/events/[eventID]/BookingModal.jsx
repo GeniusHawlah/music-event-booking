@@ -36,9 +36,10 @@ function BookingModal({ openModal, setOpenModal, eventID, seatNumber }) {
           onClick={(e) => {
             e.stopPropagation();
           }}
-        className="bg-white text-gray-900 rounded-md">
-          <Modal.Header className=" font-semibold text-gray-900 ">
-            FILL BOOKING DETAILS
+          className="bg-white text-gray-900 rounded-md"
+        >
+          <Modal.Header className=" font-semibold  ">
+            <h1 className="text-gray-900">FILL BOOKING DETAILS</h1>
           </Modal.Header>
           <Modal.Body>
             <div className="space-y-6">
@@ -48,75 +49,75 @@ function BookingModal({ openModal, setOpenModal, eventID, seatNumber }) {
 
               {/*//> DETAILS */}
               <div className="w-full">
-                  {/* //>Email */}
-                  <div className="flex flex-col mt-8 text-gray-600 w-full">
-                    <label htmlFor="email">Email (*)</label>
-                    <input
-                      ref={emailInputRef}
-                      onChange={(e) => {
-                        let value = e.target.value;
-                        value = value.replace(/\s/g, ""); // Remove all spaces
-                        setEmail(value.toLowerCase());
-                      }}
-                      required
-                      autoComplete="email"
-                      disabled={booking}
-                      value={email}
-                      type="email"
-                      className="bg-gray-50  border focus:outline-1  focus:outline-gray-700 w-full rounded-md  px-2 py-2 mt-1 placeholder:text-sm text-sm "
-                      placeholder="example@email.com"
-                    />
-                  </div>
-
-                  {/* //>First Name */}
-                  <div className="flex flex-col mt-8 text-gray-600  w-full">
-                    <label
-                      htmlFor="firstName"
-                      className="flex items-center gap-x-1"
-                    >
-                      First Name (*)
-                    </label>
-                    <input
-                      onChange={(e) => {
-                        let value = e.target.value;
-                        value = value.replace(/\s/g, ""); // Remove all spaces
-                        setFirstName(
-                          value.charAt(0).toUpperCase() + value.slice(1)
-                        );
-                      }}
-                      disabled={booking}
-                      required
-                      value={firstName}
-                      type="text"
-                      className=" placeholder:text-sm bg-gray-50   focus:outline-1  focus:outline-gray-700 w-full rounded-md border px-2 py-2 mt-1 text-sm "
-                      placeholder="e.g John"
-                    />
-                  </div>
-
-                  {/* //>Last Name */}
-                  <div className="flex text-gray-600 flex-col mt-8 w-full">
-                    <label
-                      htmlFor="lastName"
-                      className="flex items-center gap-x-1"
-                    >
-                      Surname (optional)
-                    </label>
-                    <input
-                      onChange={(e) => {
-                        let value = e.target.value;
-                        value = value.replace(/\s/g, ""); // Remove all spaces
-                        setLastName(
-                          value.charAt(0).toUpperCase() + value.slice(1)
-                        );
-                      }}
-                      disabled={booking}
-                      value={lastName}
-                      type="text"
-                      className="placeholder:text-sm bg-gray-50   focus:outline-1  focus:outline-gray-700 w-full rounded-md border px-2 py-2 mt-1 text-sm "
-                      placeholder="Doe"
-                    />
-                  </div>
+                {/* //>Email */}
+                <div className="flex flex-col mt-8 text-gray-600 w-full">
+                  <label htmlFor="email">Email (*)</label>
+                  <input
+                    ref={emailInputRef}
+                    onChange={(e) => {
+                      let value = e.target.value;
+                      value = value.replace(/\s/g, ""); // Remove all spaces
+                      setEmail(value.toLowerCase());
+                    }}
+                    required
+                    autoComplete="email"
+                    disabled={booking}
+                    value={email}
+                    type="email"
+                    className="bg-gray-50  border focus:outline-1  focus:outline-gray-700 w-full rounded-md  px-2 py-2 mt-1 placeholder:text-sm text-sm "
+                    placeholder="example@email.com"
+                  />
                 </div>
+
+                {/* //>First Name */}
+                <div className="flex flex-col mt-8 text-gray-600  w-full">
+                  <label
+                    htmlFor="firstName"
+                    className="flex items-center gap-x-1"
+                  >
+                    First Name (*)
+                  </label>
+                  <input
+                    onChange={(e) => {
+                      let value = e.target.value;
+                      value = value.replace(/\s/g, ""); // Remove all spaces
+                      setFirstName(
+                        value.charAt(0).toUpperCase() + value.slice(1)
+                      );
+                    }}
+                    disabled={booking}
+                    required
+                    value={firstName}
+                    type="text"
+                    className=" placeholder:text-sm bg-gray-50   focus:outline-1  focus:outline-gray-700 w-full rounded-md border px-2 py-2 mt-1 text-sm "
+                    placeholder="e.g John"
+                  />
+                </div>
+
+                {/* //>Last Name */}
+                <div className="flex text-gray-600 flex-col mt-8 w-full">
+                  <label
+                    htmlFor="lastName"
+                    className="flex items-center gap-x-1"
+                  >
+                    Surname (optional)
+                  </label>
+                  <input
+                    onChange={(e) => {
+                      let value = e.target.value;
+                      value = value.replace(/\s/g, ""); // Remove all spaces
+                      setLastName(
+                        value.charAt(0).toUpperCase() + value.slice(1)
+                      );
+                    }}
+                    disabled={booking}
+                    value={lastName}
+                    type="text"
+                    className="placeholder:text-sm bg-gray-50   focus:outline-1  focus:outline-gray-700 w-full rounded-md border px-2 py-2 mt-1 text-sm "
+                    placeholder="Doe"
+                  />
+                </div>
+              </div>
 
               <div className="w-full">
                 <Button
