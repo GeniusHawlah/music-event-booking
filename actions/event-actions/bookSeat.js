@@ -134,9 +134,7 @@ export const bookSeat = async ({
             .content { padding: 20px; text-align: center; }
             .button { display: inline-block; background: #D726A1; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
             .footer { margin-top: 20px; text-align: center; font-size: 12px; color: #777; }
-         
-  .important { color: #02fd16; }
-
+             .important { color: #02fd16; }
           </style>
         </head>
         <body>
@@ -159,14 +157,14 @@ export const bookSeat = async ({
     );
 
     const result = await res.json();
-    console.log(result);
+    // console.log(result);
 
     console.log("Seat booked successfully!");
     revalidatePath(`/events/${eventID}`);
 
     return {
       status: "success",
-      message: "Seat booked successfully!",
+      message: "Seat booked successfully! Check your email for details!",
     };
   } catch (error) {
     console.log(error);
