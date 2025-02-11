@@ -9,11 +9,11 @@ function NotificationPopover() {
       placement="top"
       trigger="click"
       content={
-        <div className="w-64 text-sm text-gray-500 dark:text-gray-400">
-          <div className="border-b border-gray-200 bg-gray-100 px-3 py-2 dark:border-gray-600 dark:bg-gray-700">
+        <div className="w-64 text-sm text-gray-500">
+          <div className="border-b border-gray-200 bg-gray-100 px-3 py-2">
             <h3
               id="default-popover"
-              className="font-semibold text-gray-900 dark:text-white"
+              className="font-semibold text-gray-900"
             >
               Event Rescheduled!
             </h3>
