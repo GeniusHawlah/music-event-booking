@@ -32,7 +32,7 @@ function SearchBar() {
     await refreshHandler({ tag: "events", path: "/events" });
     params.set("page", 1);
     params.set("search", search.toString());
-    router.push(`?${params.toString()}`);
+    router.push(`/events?${params.toString()}`);
   }
 
   return (
@@ -51,6 +51,7 @@ function SearchBar() {
         onKeyDown={(e) => {
           if (e.key === "Enter") {
             handleSearch(searchKeyword.trim());
+            
           }
         }}
         value={searchKeyword}
