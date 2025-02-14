@@ -28,6 +28,7 @@ export const fetchEvents = unstable_cache(
   async ({ skip = undefined, take = undefined, search = "" } = {}) => {
     const valid = await db.event?.findMany({
       where: {
+        eventDate: { gte: new Date().toISOString() },
         ...(search && {
           OR: [
             { title: { contains: search, mode: "insensitive" } },
@@ -70,6 +71,7 @@ export const fetchPopularEvents = unstable_cache(
   async ({ skip = undefined, take = undefined, search = "" } = {}) => {
     const valid = await db.event?.findMany({
       where: {
+        eventDate: { gte: new Date().toISOString() },
         ...(search && {
           OR: [
             { title: { contains: search, mode: "insensitive" } },
